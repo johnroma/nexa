@@ -1,0 +1,5 @@
+.wrapper {
+  margin: var(--lumo-space-s);
+  padding: var(--lumo-space-xl);
+  background-color: aqua;
+}

@@ -30,7 +30,6 @@ export class WcHello extends LitElement {
 
   constructor({ primary, backgroundColor, size, label, onClick }: ButtonProps) {
     super()
-    console.log("WcHello constructor", primary)
 
     this.backgroundColor = backgroundColor ?? ""
     this.size = size ?? "medium"
@@ -43,7 +42,7 @@ export class WcHello extends LitElement {
 
   render() {
     return html`
-      <div style=${styleMap({ backgroundColor: this.backgroundColor })}>
+      <section style=${styleMap({ backgroundColor: this.backgroundColor })}>
         <slot></slot>
         <button
           type="button"
@@ -56,12 +55,12 @@ export class WcHello extends LitElement {
         >
           ${this.label} count is ${this.count}
         </button>
-      </div>
+      </section>
     `
   }
 
   private _onClick() {
-    this.onClick()
+    this.onClick && this.onClick()
     this.count++
   }
 

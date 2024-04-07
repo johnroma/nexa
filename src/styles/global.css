@@ -37,6 +37,10 @@ body {
   }
 }
 
+button {
+  cursor: pointer;
+}
+
 h1,
 h2,
 h3,
@@ -45,24 +49,6 @@ h5,
 h6 {
   text-wrap: balance;
   overflow-wrap: normal;
-}
-section:has(:is(h1, h2, h3, h4, h5, h6) + p) :is(h1, h2, h3, h4, h5, h6) {
-  margin-bottom: 0.75rlh;
-  margin-top: 1.5rlh;
-}
-section > :is(h1, h2, h3, h4, h5, h6):first-child {
-  margin-top: 0;
-}
-
-section:has(p + p) p {
-  margin-bottom: 0.25rlh;
-}
-section p:last-child {
-  margin-bottom: 0;
-}
-
-section + section {
-  margin-top: 3rlh;
 }
 
 /* Global style values */
@@ -139,4 +125,29 @@ html {
 /* Scoped to a type of component */
 vaadin-button {
   --lumo-font-family: "Courier";
+  cursor: pointer;
+}
+
+wc-card:has(:is(h1, h2, h3, h4, h5, h6) + p) :is(h1, h2, h3, h4, h5, h6),
+section:has(:is(h1, h2, h3, h4, h5, h6) + p) :is(h1, h2, h3, h4, h5, h6) {
+  margin-bottom: 0.75rlh;
+  margin-top: 1.5rlh;
+}
+
+wc-card > :is(h1, h2, h3, h4, h5, h6):first-child,
+section > :is(h1, h2, h3, h4, h5, h6):first-child {
+  margin-top: 0;
+}
+
+wc-card:has(p + p) p,
+section:has(p + p) p {
+  margin-bottom: 0.25rlh;
+}
+wc-card p:last-child,
+section p:last-child {
+  margin-bottom: 0;
+}
+
+section + section {
+  margin-top: 3rlh;
 }
