@@ -2,15 +2,32 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + Lit + TS</title>
-    <link rel="stylesheet" href="./src/index.css" />
+    <title>Nexa</title>
+    <link rel="stylesheet" href="/src/styles/global.css" />
     <script type="module" src="/src/my-element.ts"></script>
+    <script type="module" src="/src/components/wc-card/wc-card.ts"
+    ></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap">
+    
   </head>
   <body>
     <my-element>
       <h1>Vite + Lit</h1>
     </my-element>
+    <wc-card label="Sample Label">
+      <h2 slot="headline" class="font-heading-large">Web Componexnt Carxd</h2>
+      <p slot="body" class="font-body-medium">Web Component content on one paragraph followed by another.</p>
+      <p class="font-body-medium" slot="body">Isländsk ambient, danskt vemod, walesisk falsettsång & varm japansk indiefolk, allt detta och mycket mer möts i dagens chillmix, där vi också får svaret på hur låter det när en biolog och en narkosläkare slår sina musikpåsar samman.</p>
+    </wc-card>
+    <script>
+      // Ensure the DOM is fully loaded before attempting to access elements
+      window.addEventListener('DOMContentLoaded', () => {
+        const el = document.querySelector('wc-card');
+        if (el) {
+          el.onClick = ()=>{console.log('clicked ee')};
+        }
+      });
+    </script>
   </body>
 </html>

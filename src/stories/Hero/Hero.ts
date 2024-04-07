@@ -1,7 +1,7 @@
 import { html } from "lit"
 import "./hero.css"
 import "@vaadin/button"
-import { WcCard } from "../../components/wc-card/WcCard"
+import { WcCard } from "../../components/wc-card/wc-card"
 
 const hello1 = (() => {
   const element = new WcCard({

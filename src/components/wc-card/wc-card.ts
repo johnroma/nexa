@@ -1,6 +1,6 @@
 import { LitElement, html, unsafeCSS } from "lit"
 import { customElement, property } from "lit/decorators.js"
-import { CardProps } from "./types"
+import { CardProps } from "./types.ts"
 import { cssString } from "./style.ts"
 import { getGlobalStyleSheets } from "../../utils/global-styles.js"
 
@@ -16,25 +16,24 @@ export class WcCard extends LitElement {
   @property({ type: Number })
   count = 0
 
-  @property({ type: String })
+  @property({ type: String, reflect: true })
   label = ""
-
-  @property({ type: String })
-  backgroundColor = ""
 
   @property({ type: Function })
   onClick = () => {}
 
-  constructor({ label, onClick }: CardProps) {
+  constructor(
+    { label, onClick }: CardProps = { label: "", onClick: () => {} }
+  ) {
     super()
 
-    this.label = label
-    this.onClick = onClick
+    if (label) this.label = label
+    if (onClick) this.onClick = onClick
   }
 
   render() {
     return html`
-      <section class="wrapper card">
+      <section class="wrapper">
         <slot name="headline"></slot>
         <slot name="body"></slot>
         <vaadin-button

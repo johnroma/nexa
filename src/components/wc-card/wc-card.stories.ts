@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/web-components"
 import { fn } from "@storybook/test"
 import type { CardProps } from "./types"
-import { WcCard } from "./WcCard"
+import { WcCard } from "./wc-card"
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories
 const meta = {

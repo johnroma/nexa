@@ -1,1 +1,1 @@
-export { WcCard } from "./WcCard"
+export { WcCard } from "./wc-card"
