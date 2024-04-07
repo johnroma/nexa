@@ -1,0 +1,1 @@
+export { WcHello } from "./WcHello"
