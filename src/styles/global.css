@@ -81,15 +81,15 @@ html {
 
 /* classes beginning with .font-display- */
 [class^="font-display-"] {
-  font-family: "Roboto", sans-serif;
+  font-family: "Nunito Sans", sans-serif;
+
   text-transform: uppercase;
   line-height: 0.85em;
-  font-weight: 700;
+  font-weight: 900;
 }
 [class^="font-heading-"] {
-  font-family: "Nunito Sans", sans-serif;
   line-height: 0.85em;
-  font-weight: 700;
+  font-weight: 6s00;
 }
 
 .font-display-large {
@@ -114,6 +114,7 @@ html {
 
 .font-body-large {
   font-size: var(--lumo-font-size-l);
+  font-weight: 500;
 }
 .font-body-base {
   font-size: var(--lumo-font-size-medium);
